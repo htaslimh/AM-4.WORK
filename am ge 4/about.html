@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tentang AMERTALOKA - Kisah di balik pertanian hidroponik premium kami, filosofi, dan komitmen terhadap keberlanjutan.">
+  <meta name="theme-color" content="#0071E3">
+  
+  <title>Tentang Kami | AMERTALOKA</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span>AMERTALOKA</span>
+      </a>
+      
+      <div class="navbar__nav">
+        <a href="index.html" class="navbar__link">Beranda</a>
+        <a href="about.html" class="navbar__link active">Tentang</a>
+        <a href="products.html" class="navbar__link">Produk</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="contact.html" class="navbar__link">Kontak</a>
+        <a href="contact.html" class="navbar__cta">Pesan Sekarang</a>
+      </div>
+      
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <div class="navbar__mobile" id="navMobile">
+      <a href="index.html" class="navbar__link">Beranda</a>
+      <a href="about.html" class="navbar__link">Tentang</a>
+      <a href="products.html" class="navbar__link">Produk</a>
+      <a href="blog.html" class="navbar__link">Blog</a>
+      <a href="contact.html" class="navbar__link">Kontak</a>
+      <a href="contact.html" class="btn btn--primary" style="margin-top: auto;">Pesan Sekarang</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span class="breadcrumb__separator">/</span>
+        <span class="breadcrumb__current">Tentang Kami</span>
+      </nav>
+      <h1 class="text-headline page-header__title">Tentang <span class="text-gradient">AMERTALOKA</span></h1>
+      <p class="text-body page-header__description">Kisah di balik misi kami untuk membawa kesegaran premium ke setiap meja makan Indonesia.</p>
+    </div>
+  </header>
+
+  <!-- Meaning Section -->
+  <section class="section" style="background: var(--color-white);">
+    <div class="container">
+      <div class="story__grid">
+        <div class="story__content reveal">
+          <span class="text-caption">Arti Nama</span>
+          <h2 class="text-title" style="margin-top: var(--space-4); margin-bottom: var(--space-6);">
+            AMERTA + LOKA
+          </h2>
+          <p class="text-body" style="margin-bottom: var(--space-4);">
+            <strong style="color: var(--color-gray-900);">AMERTA</strong> berasal dari bahasa Sanskerta yang berarti "keabadian" atau "air kehidupan" - simbol kesegaran dan vitalitas yang tak lekang oleh waktu.
+          </p>
+          <p class="text-body" style="margin-bottom: var(--space-4);">
+            <strong style="color: var(--color-gray-900);">LOKA</strong> berarti "tempat" atau "dunia" - representasi dari ekosistem pertanian modern yang kami bangun.
+          </p>
+          <p class="text-body">
+            Bersama, AMERTALOKA adalah "Tempat Kehidupan Abadi" - sebuah visi di mana pertanian berkelanjutan menghasilkan produk premium yang menyehatkan generasi demi generasi.
+          </p>
+        </div>
+        
+        <div class="story__image reveal">
+          <div class="story__image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="8.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-small">Logo AMERTALOKA</span>
+            <span class="text-caption">Akan diganti dengan asset Anda</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section" style="background: var(--color-gray-100);">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat__value">500+</div>
+          <div class="stat__label">Pelanggan Puas</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">2000+</div>
+          <div class="stat__label">Lubang Tanam</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">12</div>
+          <div class="stat__label">Varietas Produk</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value">100%</div>
+          <div class="stat__label">Tanpa Pestisida</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Story -->
+  <section class="section" style="background: var(--color-white);">
+    <div class="container">
+      <div class="story__grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="story__image reveal" style="order: -1;">
+          <div class="story__image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M4 20c0-4 4-6 8-6s8 2 8 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="text-small">Foto Founder</span>
+            <span class="text-caption">Akan diganti dengan asset Anda</span>
+          </div>
+        </div>
+        
+        <div class="story__content reveal">
+          <span class="text-caption">Cerita Founder</span>
+          <h2 class="text-title" style="margin-top: var(--space-4); margin-bottom: var(--space-6);">
+            Dari Passion Menjadi Aksi
+          </h2>
+          <p class="text-body" style="margin-bottom: var(--space-4);">
+            AMERTALOKA dimulai dari keprihatinan sederhana: mengapa sayuran segar berkualitas begitu sulit didapat di perkotaan? Pestisida, distribusi panjang, dan penyimpanan yang tidak optimal membuat nutrisi dan kesegaran berkurang.
+          </p>
+          <p class="text-body" style="margin-bottom: var(--space-4);">
+            Dengan latar belakang di bidang teknologi dan passion terhadap sustainable living, kami memutuskan untuk membangun solusi sendiri. Hidroponik menjadi jawaban - metode pertanian yang efisien, bersih, dan menghasilkan produk superior.
+          </p>
+          <p class="text-body">
+            Kini, AMERTALOKA melayani ratusan keluarga di Bandung dan sekitarnya dengan sayuran yang dipanen pagi hari dan dikirim siang hari. Kesegaran yang tak tertandingi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="section" style="background: var(--color-gray-100);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__badge">Filosofi</span>
+        <h2 class="text-headline section-header__title">
+          Nilai yang Kami <span class="text-gradient">Pegang</span>
+        </h2>
+      </div>
+      
+      <div class="bento__grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="bento__item bento__item--medium reveal" style="min-height: 300px; background: var(--color-white);">
+          <div style="padding: var(--space-8);">
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-6);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="text-subtitle" style="margin-bottom: var(--space-3);">Kualitas Tanpa Kompromi</h3>
+            <p class="text-body">Setiap tanaman diperlakukan dengan standar tertinggi. Nutrisi optimal, lingkungan terkontrol, dan panen di waktu yang tepat.</p>
+          </div>
+        </div>
+        
+        <div class="bento__item bento__item--medium reveal" style="min-height: 300px; background: var(--color-white);">
+          <div style="padding: var(--space-8);">
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-secondary), var(--color-accent)); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-6);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+              </svg>
+            </div>
+            <h3 class="text-subtitle" style="margin-bottom: var(--space-3);">Transparansi Penuh</h3>
+            <p class="text-body">Kami membuka proses kami untuk publik. Build in public, share our journey, dan belajar bersama komunitas.</p>
+          </div>
+        </div>
+        
+        <div class="bento__item bento__item--medium reveal" style="min-height: 300px; background: var(--color-white);">
+          <div style="padding: var(--space-8);">
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent), var(--color-primary)); border-radius: var(--radius-xl); display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-6);">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <h3 class="text-subtitle" style="margin-bottom: var(--space-3);">Keberlanjutan</h3>
+            <p class="text-body">Hemat air 90%, tanpa pestisida, packaging ramah lingkungan. Pertanian yang baik untuk bumi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-section__content reveal">
+        <h2 class="text-headline cta-section__title">
+          Ingin Tahu Lebih Lanjut?
+        </h2>
+        <p class="text-body cta-section__description">
+          Hubungi kami atau kunjungi kebun kami untuk melihat langsung proses pertanian hidroponik premium.
+        </p>
+        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn--primary btn--large">Hubungi Kami</a>
+          <a href="products.html" class="btn btn--outline btn--large" style="border-color: var(--color-white); color: var(--color-white);">Lihat Produk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span>AMERTALOKA</span>
+          </a>
+          <p class="footer__description">Premium hydroponic farming delivering the freshest, pesticide-free produce straight from our modern farms to your table.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer__column">
+          <h4 class="footer__column-title">Navigasi</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Beranda</a></li>
+            <li><a href="about.html" class="footer__link">Tentang Kami</a></li>
+            <li><a href="products.html" class="footer__link">Produk</a></li>
+            <li><a href="blog.html" class="footer__link">Blog</a></li>
+            <li><a href="contact.html" class="footer__link">Kontak</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__column">
+          <h4 class="footer__column-title">Produk</h4>
+          <ul class="footer__links">
+            <li><a href="products.html" class="footer__link">Sayuran Hijau</a></li>
+            <li><a href="products.html" class="footer__link">Herbs</a></li>
+            <li><a href="products.html" class="footer__link">Microgreens</a></li>
+            <li><a href="products.html" class="footer__link">Specialty</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__column">
+          <h4 class="footer__column-title">Kontak</h4>
+          <ul class="footer__links">
+            <li><span class="footer__link">Bandung, Indonesia</span></li>
+            <li><a href="tel:+6281234567890" class="footer__link">+62 812 3456 7890</a></li>
+            <li><a href="mailto:hello@amertaloka.com" class="footer__link">hello@amertaloka.com</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2024 AMERTALOKA. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
