@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Produk AMERTALOKA - Sayuran hidroponik premium, herbs segar, dan microgreens berkualitas tinggi.">
+  <meta name="theme-color" content="#0071E3">
+  
+  <title>Produk | AMERTALOKA</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <style>
+    .filters {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: var(--space-12);
+    }
+    
+    .filter-btn {
+      padding: var(--space-3) var(--space-6);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: var(--font-medium);
+      color: var(--color-gray-500);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    
+    .filter-btn:hover {
+      border-color: var(--color-gray-400);
+      color: var(--color-gray-900);
+    }
+    
+    .filter-btn.active {
+      background: var(--color-gray-900);
+      border-color: var(--color-gray-900);
+      color: var(--color-white);
+    }
+  </style>
+  
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  
+  <!-- Lenis -->
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span>AMERTALOKA</span>
+      </a>
+      
+      <div class="navbar__nav">
+        <a href="index.html" class="navbar__link">Beranda</a>
+        <a href="about.html" class="navbar__link">Tentang</a>
+        <a href="products.html" class="navbar__link active">Produk</a>
+        <a href="blog.html" class="navbar__link">Blog</a>
+        <a href="contact.html" class="navbar__link">Kontak</a>
+        <a href="contact.html" class="navbar__cta">Pesan Sekarang</a>
+      </div>
+      
+      <button class="navbar__toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    
+    <div class="navbar__mobile" id="navMobile">
+      <a href="index.html" class="navbar__link">Beranda</a>
+      <a href="about.html" class="navbar__link">Tentang</a>
+      <a href="products.html" class="navbar__link">Produk</a>
+      <a href="blog.html" class="navbar__link">Blog</a>
+      <a href="contact.html" class="navbar__link">Kontak</a>
+      <a href="contact.html" class="btn btn--primary" style="margin-top: auto;">Pesan Sekarang</a>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="index.html">Beranda</a>
+        <span class="breadcrumb__separator">/</span>
+        <span class="breadcrumb__current">Produk</span>
+      </nav>
+      <h1 class="text-headline page-header__title">Produk <span class="text-gradient">Kami</span></h1>
+      <p class="text-body page-header__description">Sayuran hidroponik premium yang dipanen segar setiap hari. Tanpa pestisida, penuh nutrisi.</p>
+    </div>
+  </header>
+
+  <!-- Products Section -->
+  <section class="section products">
+    <div class="container">
+      <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">Semua Produk</button>
+        <button class="filter-btn" data-filter="sayuran-hijau">Sayuran Hijau</button>
+        <button class="filter-btn" data-filter="herbs">Herbs</button>
+        <button class="filter-btn" data-filter="buah">Buah</button>
+        <button class="filter-btn" data-filter="specialty">Specialty</button>
+      </div>
+      
+      <!-- Products Grid -->
+      <div class="products__grid" id="allProductsGrid">
+        <!-- Products will be loaded via JavaScript -->
+        <div style="grid-column: 1 / -1; text-align: center; padding: var(--space-12);">
+          <p class="text-body">Memuat produk...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="section" style="background: var(--color-white);">
+    <div class="container">
+      <div class="story__grid">
+        <div class="story__content reveal">
+          <span class="text-caption">Cara Pesan</span>
+          <h2 class="text-title" style="margin-top: var(--space-4); margin-bottom: var(--space-6);">
+            Pesan dengan Mudah
+          </h2>
+          <p class="text-body" style="margin-bottom: var(--space-6);">
+            Cukup klik tombol "Pesan" pada produk yang Anda inginkan, isi form kontak, atau langsung hubungi kami via WhatsApp. Kami akan memproses pesanan Anda dan mengirimkan produk segar ke alamat Anda.
+          </p>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn--primary">
+              Form Pemesanan
+            </a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="btn btn--outline">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        
+        <div class="story__image reveal">
+          <div class="story__image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8 2v4M16 2v4M2 10h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="text-small">Jadwal Pengiriman</span>
+            <span class="text-caption">Senin - Sabtu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <div class="footer__logo-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+              </svg>
+            </div>
+            <span>AMERTALOKA</span>
+          </a>
+          <p class="footer__description">Premium hydroponic farming delivering the freshest, pesticide-free produce straight from our modern farms to your table.</p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer__column">
+          <h4 class="footer__column-title">Navigasi</h4>
+          <ul class="footer__links">
+            <li><a href="index.html" class="footer__link">Beranda</a></li>
+            <li><a href="about.html" class="footer__link">Tentang Kami</a></li>
+            <li><a href="products.html" class="footer__link">Produk</a></li>
+            <li><a href="blog.html" class="footer__link">Blog</a></li>
+            <li><a href="contact.html" class="footer__link">Kontak</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__column">
+          <h4 class="footer__column-title">Produk</h4>
+          <ul class="footer__links">
+            <li><a href="products.html" class="footer__link">Sayuran Hijau</a></li>
+            <li><a href="products.html" class="footer__link">Herbs</a></li>
+            <li><a href="products.html" class="footer__link">Microgreens</a></li>
+            <li><a href="products.html" class="footer__link">Specialty</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__column">
+          <h4 class="footer__column-title">Kontak</h4>
+          <ul class="footer__links">
+            <li><span class="footer__link">Bandung, Indonesia</span></li>
+            <li><a href="tel:+6281234567890" class="footer__link">+62 812 3456 7890</a></li>
+            <li><a href="mailto:hello@amertaloka.com" class="footer__link">hello@amertaloka.com</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2024 AMERTALOKA. All rights reserved.</p>
+        <div class="footer__legal">
+          <a href="#" class="footer__legal-link">Privacy Policy</a>
+          <a href="#" class="footer__legal-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
