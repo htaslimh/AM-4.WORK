@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AMERTALOKA Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--color-gray-50);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar-header">
+                <a href="../index.html" class="admin-logo">
+                    <div class="admin-logo-icon">A</div>
+                    <span>AMERTALOKA</span>
+                </a>
+            </div>
+            
+            <nav class="admin-nav">
+                <div class="admin-nav-section">
+                    <div class="admin-nav-title">Menu Utama</div>
+                    <a href="index.html" class="admin-nav-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="products.html" class="admin-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        Produk
+                    </a>
+                    <a href="blog.html" class="admin-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                        Blog
+                    </a>
+                    <a href="messages.html" class="admin-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Pesan
+                        <span class="admin-badge info" style="margin-left: auto;">3</span>
+                    </a>
+                </div>
+                
+                <div class="admin-nav-section">
+                    <div class="admin-nav-title">Pengaturan</div>
+                    <a href="#" class="admin-nav-item" onclick="handleLogout()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Keluar
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <button class="admin-btn admin-btn-ghost admin-mobile-toggle" onclick="toggleSidebar()" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <div class="admin-breadcrumb">
+                        <a href="index.html">Admin</a>
+                        <span class="admin-breadcrumb-separator">/</span>
+                        <span class="admin-breadcrumb-current">Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="admin-header-right">
+                    <div class="admin-user-menu">
+                        <div class="admin-user-avatar">A</div>
+                        <span class="admin-user-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="admin-content">
+                <div class="admin-page-header">
+                    <h1 class="admin-page-title">Dashboard</h1>
+                    <p class="admin-page-description">Selamat datang kembali! Berikut ringkasan aktivitas terkini.</p>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="admin-stats-grid">
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                </svg>
+                            </div>
+                            <div class="admin-stat-trend up">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                                </svg>
+                                12%
+                            </div>
+                        </div>
+                        <div class="admin-stat-value" id="totalProducts">8</div>
+                        <div class="admin-stat-label">Total Produk</div>
+                    </div>
+                    
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon green">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="admin-stat-trend up">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                                </svg>
+                                8%
+                            </div>
+                        </div>
+                        <div class="admin-stat-value">6</div>
+                        <div class="admin-stat-label">Produk Aktif</div>
+                    </div>
+                    
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon orange">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                </svg>
+                            </div>
+                            <div class="admin-stat-trend up">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                                </svg>
+                                24%
+                            </div>
+                        </div>
+                        <div class="admin-stat-value" id="totalBlogPosts">4</div>
+                        <div class="admin-stat-label">Artikel Blog</div>
+                    </div>
+                    
+                    <div class="admin-stat-card">
+                        <div class="admin-stat-header">
+                            <div class="admin-stat-icon purple">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="admin-stat-trend down">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="14" height="14">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                                3%
+                            </div>
+                        </div>
+                        <div class="admin-stat-value" id="totalMessages">3</div>
+                        <div class="admin-stat-label">Pesan Baru</div>
+                    </div>
+                </div>
+                
+                <!-- Two Column Grid -->
+                <div class="admin-grid-2">
+                    <!-- Recent Products -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">Produk Terbaru</h3>
+                            <a href="products.html" class="admin-btn admin-btn-secondary">
+                                Lihat Semua
+                            </a>
+                        </div>
+                        <div class="admin-table-container">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Produk</th>
+                                        <th>Kategori</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentProductsTable">
+                                    <!-- Filled by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Recent Activity -->
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <h3 class="admin-card-title">Aktivitas Terbaru</h3>
+                        </div>
+                        <div class="admin-card-body">
+                            <div class="admin-activity-list">
+                                <div class="admin-activity-item">
+                                    <div class="admin-activity-icon message">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="admin-activity-content">
+                                        <p class="admin-activity-text">Pesan baru dari <strong>PT. Agro Makmur</strong></p>
+                                        <span class="admin-activity-time">2 jam yang lalu</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="admin-activity-item">
+                                    <div class="admin-activity-icon product">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                        </svg>
+                                    </div>
+                                    <div class="admin-activity-content">
+                                        <p class="admin-activity-text">Produk <strong>Benih Padi Unggul</strong> ditambahkan</p>
+                                        <span class="admin-activity-time">5 jam yang lalu</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="admin-activity-item">
+                                    <div class="admin-activity-icon order">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div class="admin-activity-content">
+                                        <p class="admin-activity-text">Artikel blog <strong>Teknologi Pertanian Modern</strong> dipublikasikan</p>
+                                        <span class="admin-activity-time">1 hari yang lalu</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="admin-activity-item">
+                                    <div class="admin-activity-icon message">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div class="admin-activity-content">
+                                        <p class="admin-activity-text">Pesan baru dari <strong>Koperasi Tani Sejahtera</strong></p>
+                                        <span class="admin-activity-time">2 hari yang lalu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Blog Posts -->
+                <div class="admin-card" style="margin-top: 1.5rem;">
+                    <div class="admin-card-header">
+                        <h3 class="admin-card-title">Artikel Blog Terbaru</h3>
+                        <a href="blog.html" class="admin-btn admin-btn-secondary">
+                            Lihat Semua
+                        </a>
+                    </div>
+                    <div class="admin-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Judul</th>
+                                    <th>Kategori</th>
+                                    <th>Tanggal</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recentBlogTable">
+                                <!-- Filled by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // Check authentication
+        if (localStorage.getItem('amertaloka_admin_logged_in') !== 'true') {
+            window.location.href = 'login.html';
+        }
+        
+        // Toggle sidebar for mobile
+        function toggleSidebar() {
+            document.getElementById('adminSidebar').classList.toggle('open');
+        }
+        
+        // Logout function
+        function handleLogout() {
+            localStorage.removeItem('amertaloka_admin_logged_in');
+            localStorage.removeItem('amertaloka_admin_user');
+            window.location.href = 'login.html';
+        }
+        
+        // Load data
+        async function loadDashboardData() {
+            try {
+                // Load products
+                const productsRes = await fetch('../data/products.json');
+                const productsData = await productsRes.json();
+                const products = productsData.products || [];
+                
+                document.getElementById('totalProducts').textContent = products.length;
+                
+                // Render recent products
+                const recentProducts = products.slice(0, 4);
+                const productsTable = document.getElementById('recentProductsTable');
+                productsTable.innerHTML = recentProducts.map(product => `
+                    <tr>
+                        <td>
+                            <div class="admin-table-product">
+                                <div class="admin-table-image" style="background: linear-gradient(135deg, var(--color-primary-50), var(--color-secondary-50)); display: flex; align-items: center; justify-content: center; color: var(--color-primary); font-size: 0.75rem;">
+                                    ${product.name.substring(0, 2).toUpperCase()}
+                                </div>
+                                <div class="admin-table-product-info">
+                                    <h4>${product.name}</h4>
+                                    <span>${product.category}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>${product.category}</td>
+                        <td><span class="admin-badge ${product.status === 'available' ? 'success' : 'warning'}">${product.status === 'available' ? 'Tersedia' : 'Pre-order'}</span></td>
+                    </tr>
+                `).join('');
+                
+                // Load blog posts
+                const blogRes = await fetch('../data/blog.json');
+                const blogData = await blogRes.json();
+                const posts = blogData.posts || [];
+                
+                document.getElementById('totalBlogPosts').textContent = posts.length;
+                
+                // Render recent blog posts
+                const recentPosts = posts.slice(0, 4);
+                const blogTable = document.getElementById('recentBlogTable');
+                blogTable.innerHTML = recentPosts.map(post => `
+                    <tr>
+                        <td>
+                            <div class="admin-table-product-info">
+                                <h4>${post.title}</h4>
+                                <span>Oleh ${post.author}</span>
+                            </div>
+                        </td>
+                        <td>${post.category}</td>
+                        <td>${post.date}</td>
+                        <td><span class="admin-badge ${post.status === 'published' ? 'success' : 'warning'}">${post.status === 'published' ? 'Dipublikasi' : 'Draft'}</span></td>
+                    </tr>
+                `).join('');
+                
+                // Load messages from localStorage
+                const messages = JSON.parse(localStorage.getItem('amertaloka_messages') || '[]');
+                document.getElementById('totalMessages').textContent = messages.length;
+                
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+            }
+        }
+        
+        // Initialize
+        loadDashboardData();
+    </script>
+</body>
+</html>

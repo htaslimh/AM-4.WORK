@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan - AMERTALOKA Admin</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/admin.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--color-gray-50);
+        }
+        
+        .message-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .message-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .message-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .message-sender {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .message-info h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--color-gray-900);
+            margin: 0 0 0.125rem 0;
+        }
+        
+        .message-info span {
+            font-size: 0.8125rem;
+            color: var(--color-gray-500);
+        }
+        
+        .message-time {
+            font-size: 0.75rem;
+            color: var(--color-gray-400);
+        }
+        
+        .message-subject {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--color-gray-800);
+            margin-bottom: 0.5rem;
+        }
+        
+        .message-body {
+            font-size: 0.875rem;
+            color: var(--color-gray-600);
+            line-height: 1.6;
+        }
+        
+        .message-footer {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--color-gray-100);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar-header">
+                <a href="../index.html" class="admin-logo">
+                    <div class="admin-logo-icon">A</div>
+                    <span>AMERTALOKA</span>
+                </a>
+            </div>
+            
+            <nav class="admin-nav">
+                <div class="admin-nav-section">
+                    <div class="admin-nav-title">Menu Utama</div>
+                    <a href="index.html" class="admin-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="products.html" class="admin-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        Produk
+                    </a>
+                    <a href="blog.html" class="admin-nav-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                        </svg>
+                        Blog
+                    </a>
+                    <a href="messages.html" class="admin-nav-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Pesan
+                    </a>
+                </div>
+                
+                <div class="admin-nav-section">
+                    <div class="admin-nav-title">Pengaturan</div>
+                    <a href="#" class="admin-nav-item" onclick="handleLogout()">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Keluar
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="admin-header-left">
+                    <div class="admin-breadcrumb">
+                        <a href="index.html">Admin</a>
+                        <span class="admin-breadcrumb-separator">/</span>
+                        <span class="admin-breadcrumb-current">Pesan</span>
+                    </div>
+                </div>
+                
+                <div class="admin-header-right">
+                    <div class="admin-user-menu">
+                        <div class="admin-user-avatar">A</div>
+                        <span class="admin-user-name">Admin</span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Content -->
+            <div class="admin-content">
+                <div class="admin-page-header">
+                    <h1 class="admin-page-title">Kotak Masuk</h1>
+                    <p class="admin-page-description">Pesan dari pengunjung melalui formulir kontak.</p>
+                </div>
+                
+                <!-- Messages List -->
+                <div id="messagesList">
+                    <!-- Filled by JS -->
+                </div>
+                
+                <!-- Empty State -->
+                <div class="admin-card" id="emptyState" style="display: none;">
+                    <div class="admin-empty-state">
+                        <div class="admin-empty-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h4 class="admin-empty-title">Tidak ada pesan</h4>
+                        <p class="admin-empty-text">Belum ada pesan yang masuk dari formulir kontak.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // Check authentication
+        if (localStorage.getItem('amertaloka_admin_logged_in') !== 'true') {
+            window.location.href = 'login.html';
+        }
+        
+        // Logout function
+        function handleLogout() {
+            localStorage.removeItem('amertaloka_admin_logged_in');
+            localStorage.removeItem('amertaloka_admin_user');
+            window.location.href = 'login.html';
+        }
+        
+        // Load messages from localStorage
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('amertaloka_messages') || '[]');
+            const messagesList = document.getElementById('messagesList');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (messages.length === 0) {
+                emptyState.style.display = 'block';
+                messagesList.innerHTML = '';
+                return;
+            }
+            
+            emptyState.style.display = 'none';
+            
+            // Sort by date (newest first)
+            messages.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            messagesList.innerHTML = messages.map((msg, index) => {
+                const initials = msg.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+                const date = new Date(msg.timestamp);
+                const timeAgo = getTimeAgo(date);
+                
+                return `
+                    <div class="message-card">
+                        <div class="message-header">
+                            <div class="message-sender">
+                                <div class="message-avatar">${initials}</div>
+                                <div class="message-info">
+                                    <h4>${msg.name}</h4>
+                                    <span>${msg.email}</span>
+                                </div>
+                            </div>
+                            <span class="message-time">${timeAgo}</span>
+                        </div>
+                        <div class="message-subject">${msg.subject || 'Tanpa Subjek'}</div>
+                        <div class="message-body">${msg.message}</div>
+                        <div class="message-footer">
+                            <a href="mailto:${msg.email}" class="admin-btn admin-btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                                </svg>
+                                Balas
+                            </a>
+                            <button class="admin-btn admin-btn-secondary" onclick="deleteMessage(${index})">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                                Hapus
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // Delete message
+        function deleteMessage(index) {
+            if (confirm('Apakah Anda yakin ingin menghapus pesan ini?')) {
+                const messages = JSON.parse(localStorage.getItem('amertaloka_messages') || '[]');
+                messages.splice(index, 1);
+                localStorage.setItem('amertaloka_messages', JSON.stringify(messages));
+                loadMessages();
+            }
+        }
+        
+        // Get time ago string
+        function getTimeAgo(date) {
+            const now = new Date();
+            const diff = now - date;
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            
+            if (minutes < 1) return 'Baru saja';
+            if (minutes < 60) return `${minutes} menit yang lalu`;
+            if (hours < 24) return `${hours} jam yang lalu`;
+            if (days < 7) return `${days} hari yang lalu`;
+            
+            return date.toLocaleDateString('id-ID', { 
+                day: 'numeric', 
+                month: 'long', 
+                year: 'numeric' 
+            });
+        }
+        
+        // Initialize
+        loadMessages();
+    </script>
+</body>
+</html>
